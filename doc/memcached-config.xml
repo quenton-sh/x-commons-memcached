@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<memcached-config>
+
+	<default-client>client1</default-client>
+
+	<client name="client1" useBinaryProtocol="false"
+		useConsistencyHash="true" connectionPoolSize="5" operationTimeout="2000">
+		<host address="127.0.0.1" port="11211" weight="1" />
+		<host address="127.0.0.1" port="11212" weight="1" />
+		<host address="127.0.0.1" port="11213" weight="1" />
+	</client>
+
+	<client name="client2" useBinaryProtocol="false"
+		useConsistencyHash="true" connectionPoolSize="5" operationTimeout="2000">
+		<host address="192.168.1.101" port="11211" weight="2" />
+		<host address="192.168.1.102" port="11211" weight="3" />
+		<host address="192.168.1.103" port="11211" weight="5" />
+	</client>
+
+</memcached-config>
